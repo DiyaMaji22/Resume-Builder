@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import toast from "react-hot-toast";
 import { resumeApi } from "@/services/api";
 import { createEmptyResume } from "@/utils/resume";
-import type { Resume, ResumeUpdatePayload } from "@/types";
+import type { Resume, ResumeUpdatePayload, ResumeStarter } from "@/types";
 
 const AUTOSAVE_DELAY_MS = 3000;
 
@@ -119,5 +119,32 @@ export function useResumeBuilder({ resumeId }: Options) {
     }
   }, [resumeId]);
 
-  return { resume, updateField, save, isSaving, isLoading, isDirty, toggleVisibility };
+  const loadStarterData = useCallback(
+    (starter: ResumeStarter) => {
+      setResume((prev) => {
+        const next: Resume = {
+          ...prev,
+          template: starter.template,
+          accentColor: starter.accentColor,
+          professionalSummary: starter.professionalSummary,
+          personalInfo: { ...prev.personalInfo, ...starter.personalInfo },
+          experience: starter.experience,
+          education: starter.education,
+          projects: starter.projects,
+          certifications: starter.certifications,
+          skills: starter.skills,
+        };
+        latestResume.current = next;
+        return next;
+      });
+      setIsDirty(true);
+      if (autosaveTimer.current) clearTimeout(autosaveTimer.current);
+      autosaveTimer.current = setTimeout(() => {
+        void persist();
+      }, AUTOSAVE_DELAY_MS);
+    },
+    [persist]
+  );
+
+  return { resume, updateField, loadStarterData, save, isSaving, isLoading, isDirty, toggleVisibility };
 }

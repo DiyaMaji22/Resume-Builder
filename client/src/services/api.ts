@@ -1,9 +1,10 @@
 import axios, { type AxiosError } from "axios";
 import type {
   Resume, ApiResponse, AuthPayload, User,
-  ResumeUpdatePayload, AISuggestRequest, AISuggestResponse,
-  ResumeSnapshot,
+  ResumeUpdatePayload, ResumeCreatePayload, AISuggestRequest, AISuggestResponse,
+  ResumeSnapshot, ResumeStarter, ATSAnalysisResult,
 } from "@/types";
+import type { BenchmarkJob } from "@/data/starterResumes";
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL ?? "",
@@ -55,15 +56,24 @@ export const authApi = {
 };
 
 export const resumeApi = {
-  list:      ()                                    => api.get<ApiResponse<Resume[]>>("/api/resumes"),
-  get:       (id: string)                          => api.get<ApiResponse<Resume>>(`/api/resumes/${id}`),
-  getPublic: (id: string)                          => api.get<ApiResponse<Resume>>(`/api/resumes/public/${id}`),
-  create:    (body: { title: string })             => api.post<ApiResponse<Resume>>("/api/resumes", body),
-  duplicate: (id: string)                          => api.post<ApiResponse<Resume>>(`/api/resumes/${id}/duplicate`),
-  update:    (id: string, body: ResumeUpdatePayload) => api.put<ApiResponse<Resume>>(`/api/resumes/${id}`, body),
-  delete:    (id: string)                          => api.delete<ApiResponse>(`/api/resumes/${id}`),
+  list:           ()                                    => api.get<ApiResponse<Resume[]>>("/api/resumes"),
+  get:            (id: string)                          => api.get<ApiResponse<Resume>>(`/api/resumes/${id}`),
+  getPublic:      (id: string)                          => api.get<ApiResponse<Resume>>(`/api/resumes/public/${id}`),
+  getStarters:    ()                                    => api.get<ApiResponse<{ starters: ResumeStarter[]; benchmarkJobs: BenchmarkJob[] }>>("/api/resumes/starters"),
+  create:         (body: ResumeCreatePayload)           => api.post<ApiResponse<Resume>>("/api/resumes", body),
+  duplicate:      (id: string)                          => api.post<ApiResponse<Resume>>(`/api/resumes/${id}/duplicate`),
+  update:         (id: string, body: ResumeUpdatePayload) => api.put<ApiResponse<Resume>>(`/api/resumes/${id}`, body),
+  delete:         (id: string)                          => api.delete<ApiResponse>(`/api/resumes/${id}`),
   saveVersion:    (id: string)                          => api.post<ApiResponse<Resume>>(`/api/resumes/${id}/versions`),
   restoreVersion: (id: string, snapshotId: string)      => api.post<ApiResponse<Resume>>(`/api/resumes/${id}/versions/${snapshotId}/restore`),
+  analyzeATS:     (id: string, jobDescription: string)  => api.post<ApiResponse<ATSAnalysisResult>>(`/api/resumes/${id}/ats-analyze`, { jobDescription }),
+  uploadPDF:      (file: File)                          => {
+    const formData = new FormData();
+    formData.append("file", file);
+    return api.post<ApiResponse<Resume>>("/api/resumes/upload", formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+  },
 };
 
 export const aiApi = {
