@@ -79,6 +79,42 @@ export type ResumeUpdatePayload = Partial<
   Omit<Resume, "_id" | "userId" | "createdAt" | "updatedAt" | "versions">
 >;
 
+export type ResumeCreatePayload = Pick<Resume, "title"> &
+  Partial<Omit<Resume, "_id" | "userId" | "createdAt" | "updatedAt" | "versions">>;
+
+export interface ResumeStarter {
+  id: string;
+  role: string;
+  category: "Engineering" | "Data & AI" | "Product & Design" | "Marketing & Growth";
+  title: string;
+  description: string;
+  template: TemplateId;
+  accentColor: string;
+  professionalSummary: string;
+  personalInfo: PersonalInfo;
+  experience: ExperienceEntry[];
+  education: EducationEntry[];
+  projects: ProjectEntry[];
+  certifications: CertificationEntry[];
+  skills: string[];
+}
+
+export interface ATSAnalysisRequest {
+  resume: Resume;
+  jobDescription: string;
+}
+
+export interface ATSAnalysisResult {
+  overallScore: number;
+  keywordScore: number;
+  formattingScore: number;
+  quantifiedScore: number;
+  matchedKeywords: string[];
+  missingKeywords: string[];
+  strongActionVerbs: string[];
+  recommendations: string[];
+}
+
 export interface User {
   _id:       string;
   name:      string;
