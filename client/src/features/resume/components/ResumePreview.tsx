@@ -53,8 +53,12 @@ export function ResumePreview({ resume }: Props) {
   return (
     <div
       id="resume-preview"
-      className="bg-white overflow-hidden"
-      style={{ minHeight: "1000px", borderRadius: "8px", boxShadow: "0 4px 24px rgba(0,0,0,0.4)" }}
+      className="bg-white overflow-hidden transition-all duration-300"
+      style={{
+        minHeight: "1000px",
+        borderRadius: "12px",
+        boxShadow: "0 20px 40px -15px rgba(15, 23, 42, 0.16), 0 0 0 1px rgba(15, 23, 42, 0.08)",
+      }}
     >
       <TemplateErrorBoundary>
         <Template resume={resume} />
