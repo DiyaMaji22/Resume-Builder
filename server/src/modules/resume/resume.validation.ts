@@ -56,7 +56,21 @@ const certificationSchema = z.object({
 });
 
 export const createResumeSchema = z.object({
-  title: z.string().min(1, "Title is required").max(100),
+  title:               z.string().min(1, "Title is required").max(100),
+  isPublic:            z.boolean().optional(),
+  template:            templateIdSchema.optional(),
+  accentColor:         z.string().regex(/^#[0-9A-Fa-f]{6}$/, "Invalid hex color").optional(),
+  professionalSummary: z.string().max(2000).optional(),
+  personalInfo:        personalInfoSchema.partial().optional(),
+  experience:          z.array(experienceSchema).max(20).optional(),
+  education:           z.array(educationSchema).max(10).optional(),
+  projects:            z.array(projectSchema).max(20).optional(),
+  certifications:      z.array(certificationSchema).max(20).optional(),
+  skills:              z.array(z.string().max(50)).max(50).optional(),
+});
+
+export const atsAnalysisSchema = z.object({
+  jobDescription: z.string().min(10, "Job description must be at least 10 characters"),
 });
 
 export const updateResumeSchema = z.object({

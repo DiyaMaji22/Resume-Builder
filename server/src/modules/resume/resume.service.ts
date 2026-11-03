@@ -59,9 +59,11 @@ export class ResumeService {
   }
 
   async create(userId: string, input: CreateResumeInput): Promise<Resume> {
+    const { title, ...rest } = input;
     const doc = await ResumeModel.create({
       userId: new mongoose.Types.ObjectId(userId),
-      title:  input.title,
+      title,
+      ...rest,
     });
     return toResume(doc.toObject() as unknown as Record<string, unknown>);
   }
