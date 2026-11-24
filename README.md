@@ -1,380 +1,73 @@
-# Resume Builder — TypeScript Refactor
+# Resume Builder
 
-A production-grade, ATS-optimized resume builder built with React, Node.js/Express, and MongoDB — fully migrated to TypeScript with strict mode, clean architecture, and complete type safety across the stack.
+An ATS-aware resume builder. A React client with live preview and PDF-style templates, backed by a
+Django API on MongoDB.
 
----
-
-## Tech Stack
+## Stack
 
 | Layer | Technology |
 |---|---|
-| Frontend | React 19, TypeScript 5, Vite 7, Tailwind CSS v4 |
-| State | Redux Toolkit |
-| Backend | Node.js, Express 5, TypeScript 5 |
-| Database | MongoDB, Mongoose 9 |
-| Validation | Zod (frontend + backend) |
-| Auth | JWT + bcrypt |
-| Linting | ESLint + typescript-eslint (strict) |
+| Client | React 19, TypeScript 5, Vite 7, Tailwind CSS v4, Redux Toolkit |
+| Backend | Django 5.2 LTS, Django REST Framework, Python 3.12 |
+| Database | MongoDB 6+ (via `django-mongodb-backend`) |
+| Auth | JWT access and refresh tokens |
 
----
-
-## Project Structure
+## Layout
 
 ```
 resume-builder/
-├── package.json                    # Root: concurrent dev scripts
-│
-├── server/
-│   ├── src/
-│   │   ├── index.ts                # App entry point
-│   │   ├── config/
-│   │   │   ├── db.ts               # MongoDB connection
-│   │   │   └── env.ts              # Type-safe env vars (Zod)
-│   │   ├── middleware/
-│   │   │   ├── authenticate.ts     # JWT middleware, types req.userId
-│   │   │   ├── errorHandler.ts     # Global error handler
-│   │   │   └── requestLogger.ts    # Dev request logger
-│   │   ├── modules/
-│   │   │   ├── auth/
-│   │   │   │   ├── auth.controller.ts
-│   │   │   │   ├── auth.route.ts
-│   │   │   │   ├── auth.service.ts
-│   │   │   │   └── auth.validation.ts
-│   │   │   ├── resume/
-│   │   │   │   ├── resume.controller.ts
-│   │   │   │   ├── resume.route.ts
-│   │   │   │   ├── resume.schema.ts
-│   │   │   │   ├── resume.service.ts
-│   │   │   │   └── resume.validation.ts
-│   │   │   └── user/
-│   │   │       └── user.schema.ts
-│   │   └── types/
-│   │       └── shared.ts           # Domain types shared with frontend
-│   ├── .env.example
-│   ├── package.json
-│   └── tsconfig.json
-│
-└── client/
-    ├── index.html
-    ├── vite.config.ts
-    ├── tsconfig.json
-    ├── eslint.config.ts
-    ├── .env.example
-    └── src/
-        ├── main.tsx                # Redux Provider + React mount
-        ├── App.tsx                 # Router + auth bootstrap
-        ├── index.css               # Tailwind v4 + print styles
-        ├── vite-env.d.ts           # ImportMeta types
-        ├── types/
-        │   └── index.ts            # All shared domain types
-        ├── services/
-        │   └── api.ts              # Typed Axios client
-        ├── store/
-        │   ├── index.ts
-        │   └── features/
-        │       └── authSlice.ts
-        ├── hooks/
-        │   └── useAppStore.ts      # Typed useDispatch/useSelector
-        ├── utils/
-        │   └── resume.ts           # generateId, formatMonthYear, etc.
-        ├── components/
-        │   └── ui/
-        │       └── ProtectedRoute.tsx
-        └── features/
-            ├── resume/
-            │   ├── ResumeBuilderPage.tsx   # Split-panel builder UI
-            │   ├── DashboardPage.tsx       # Resume list + create
-            │   ├── LoginPage.tsx           # Login + register
-            │   ├── PublicPreviewPage.tsx   # Shareable resume view
-            │   ├── hooks/
-            │   │   └── useResumeBuilder.ts # Core resume state hook
-            │   └── components/
-            │       ├── PersonalInfoForm.tsx
-            │       ├── SummaryForm.tsx
-            │       ├── ExperienceForm.tsx
-            │       ├── EducationForm.tsx
-            │       ├── ProjectForm.tsx
-            │       ├── CertificationForm.tsx
-            │       ├── SkillsForm.tsx
-            │       ├── TemplateSelector.tsx
-            │       ├── ColorPicker.tsx
-            │       └── ResumePreview.tsx
-            └── templates/
-                ├── components/
-                │   ├── ClassicTemplate.tsx   # Traditional, max ATS compat
-                │   ├── ModernTemplate.tsx    # Sidebar layout
-                │   ├── MinimalTemplate.tsx   # Clean, airy
-                │   └── ExecutiveTemplate.tsx # Bold typographic hierarchy
-                └── registry/
-                    └── index.ts              # Template registry + definitions
+├── client/        React app (Vite). Talks to the API through src/services/api.ts
+├── backend/       Django API. See backend/README.md for setup, API reference and cutover notes
+├── package.json   Root scripts that run both halves
+└── README.md
 ```
 
----
+## Getting started
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 20+
-- MongoDB 7+ (local or Atlas)
-
-### Installation
+Prerequisites: Node.js 20+, Python 3.12+, MongoDB 6+ (local or Atlas).
 
 ```bash
-# Clone and install all dependencies
-git clone <repo>
-cd resume-builder
-npm run install:all
+npm run install:all            # client npm packages + backend Python packages
+cp backend/.env.example backend/.env
+npm run backend:setup          # migrations (fake-initial) and MongoDB validators and indexes
+npm run backend:seed           # optional demo data; sign in as diyamaji22@gmail.com / password123
+npm run dev                    # client on :5173, API on :8000
 ```
 
-### Environment Setup
+Client environment: `client/.env.example` sets `VITE_API_URL`. It is empty by default, which
+uses the Vite dev proxy.
 
-```bash
-# Server
-cp server/.env.example server/.env
-# Edit server/.env:
-#   MONGODB_URI=mongodb://localhost:27017/resume-builder
-#   JWT_SECRET=<at-least-32-random-chars>
+## Upgrading from the Express server
 
-# Client
-cp client/.env.example client/.env
-# VITE_API_URL is empty by default (uses Vite proxy to localhost:3000)
-```
+The Django backend reads the existing MongoDB data without rewriting it. Run
+`npm run backend:setup` against the existing database, then follow the cutover checklist in
+`backend/README.md`. Existing accounts keep their passwords. Users sign in again once, because
+sessions are re-issued.
 
-### Development
+## Common tasks
 
-```bash
-# Run both server and client concurrently
-npm run dev
-
-# Or run individually
-npm run dev --prefix server    # http://localhost:3000
-npm run dev --prefix client    # http://localhost:5173
-```
-
-### Build
-
-```bash
-npm run build
-```
-
-### Type Check
-
-```bash
-npm run type-check
-```
-
----
-
-## API Reference
-
-All endpoints return `{ message: string, data?: T }`.
-
-### Auth — `/api/auth`
-
-| Method | Path | Auth | Body | Response |
-|---|---|---|---|---|
-| POST | `/register` | — | `{ name, email, password }` | `{ token, user }` |
-| POST | `/login` | — | `{ email, password }` | `{ token, user }` |
-| GET | `/me` | Bearer | — | `User` |
-
-### Resumes — `/api/resumes`
-
-| Method | Path | Auth | Body | Response |
-|---|---|---|---|---|
-| GET | `/` | Bearer | — | `Resume[]` |
-| POST | `/` | Bearer | `{ title }` | `Resume` |
-| GET | `/:id` | Bearer | — | `Resume` |
-| PUT | `/:id` | Bearer | `ResumeUpdatePayload` | `Resume` |
-| DELETE | `/:id` | Bearer | — | — |
-| GET | `/public/:id` | — | — | `Resume` |
-
----
-
-## How to Add a New Template
-
-Adding a template requires changes in exactly **two files**.
-
-**Step 1** — Add the template ID to the shared types:
-
-```ts
-// server/src/types/shared.ts  AND  client/src/types/index.ts
-export type TemplateId = "classic" | "modern" | "minimal" | "executive" | "creative";
-//                                                                          ^^^^^^^^
-```
-
-**Step 2** — Create the component:
-
-```tsx
-// client/src/features/templates/components/CreativeTemplate.tsx
-import type { TemplateProps } from "@/types";
-
-export function CreativeTemplate({ resume }: TemplateProps) {
-  return (
-    <article>
-      <h1>{resume.personalInfo.fullName}</h1>
-      {/* ATS tip: always use semantic elements (section, h2, ul, address) */}
-    </article>
-  );
-}
-```
-
-**Step 3** — Register it:
-
-```ts
-// client/src/features/templates/registry/index.ts
-import { CreativeTemplate } from "../components/CreativeTemplate";
-
-export const templateRegistry: Record<TemplateId, ComponentType<TemplateProps>> = {
-  classic: ClassicTemplate,
-  modern: ModernTemplate,
-  minimal: MinimalTemplate,
-  executive: ExecutiveTemplate,
-  creative: CreativeTemplate,  // add here
-};
-
-export const templateDefinitions: TemplateDefinition[] = [
-  // ...existing
-  {
-    id: "creative",
-    name: "Creative",
-    description: "Bold layout for design and creative roles",
-  },
-];
-```
-
-That's all. The template selector, preview, and PDF export will all pick it up automatically.
-
----
-
-## How to Extend the Resume Schema
-
-To add a new section (e.g., `languages`):
-
-**Step 1** — Add the type to both `shared.ts` files:
-
-```ts
-export interface LanguageEntry {
-  id: string;
-  language: string;
-  proficiency: "Native" | "Fluent" | "Intermediate" | "Basic";
-}
-
-export interface Resume {
-  // ...existing fields
-  languages: LanguageEntry[];
-}
-```
-
-**Step 2** — Add to the Mongoose schema:
-
-```ts
-// server/src/modules/resume/resume.schema.ts
-const LanguageSchema = new Schema(
-  { id: String, language: String, proficiency: String },
-  { _id: false }
-);
-
-// Inside ResumeSchema:
-languages: { type: [LanguageSchema], default: [] },
-```
-
-**Step 3** — Add to Zod validation:
-
-```ts
-// server/src/modules/resume/resume.validation.ts
-const languageSchema = z.object({
-  id: z.string(),
-  language: z.string().default(""),
-  proficiency: z.enum(["Native", "Fluent", "Intermediate", "Basic"]),
-});
-
-// Inside updateResumeSchema:
-languages: z.array(languageSchema).optional(),
-```
-
-**Step 4** — Create the form component and add to `ResumeBuilderPage.tsx`:
-
-```tsx
-// Add to SECTIONS array
-{ id: "languages", label: "Languages", icon: Globe },
-
-// Add to render
-{activeSection?.id === "languages" && (
-  <LanguagesForm
-    data={resume.languages}
-    onChange={(v) => updateField("languages", v)}
-  />
-)}
-```
-
-**Step 5** — Render it in templates. Each template receives the full `Resume` type, so just add the new section wherever appropriate.
-
----
-
-## ATS Optimization Notes
-
-All templates follow these ATS best practices:
-
-- **Semantic HTML** — `<article>`, `<section>`, `<header>`, `<h1>`–`<h3>`, `<address>`, `<ul>`, `<time>`
-- **`aria-labelledby`** on every `<section>` so screen readers and parsers associate headings
-- **No tables, no floats, no absolute positioning** — all layout uses flexbox/grid which degrades gracefully
-- **Plain text skills** — rendered as `·`-separated inline text, not images or icon-based badges
-- **Proper heading hierarchy** — `h1` for name, `h2` for section headings, `h3` for entry titles
-- **`<time>` elements** for all dates — machine-readable date metadata
-- **Hyperlinks** on email/phone/URLs — linked with proper `href` protocols
-
----
-
-## Type Safety Highlights
-
-### No `any` anywhere
-
-`strict: true` is enabled on both `server/tsconfig.json` and `client/tsconfig.json`. The ESLint rule `"@typescript-eslint/no-explicit-any": "error"` enforces this at lint time.
-
-### Typed API responses end-to-end
-
-```ts
-// Every API call knows its return type
-const { data } = await resumeApi.get(id);
-//                                ^-- ApiResponse<Resume>
-//       data.data is Resume | undefined
-```
-
-### Typed request extensions
-
-```ts
-// middleware/authenticate.ts
-declare global {
-  namespace Express {
-    interface Request {
-      userId?: string;
-    }
-  }
-}
-// Controllers can safely access req.userId after the middleware runs
-```
-
-### Zod → TypeScript inference
-
-```ts
-export const createResumeSchema = z.object({ title: z.string().min(1).max(100) });
-export type CreateResumeInput = z.infer<typeof createResumeSchema>;
-// CreateResumeInput = { title: string }
-// The type is derived from the schema — they can never get out of sync
-```
-
----
-
-## Future Extension Points
-
-The architecture is designed to support these features without breaking changes:
-
-| Feature | How to add |
+| Task | Command |
 |---|---|
-| Resume versioning | Add `versions: ResumeSnapshot[]` to schema; save snapshot on each `PUT` |
-| Resume sharing with expiry | Add `shareToken` and `shareExpiresAt` fields; add `/api/resumes/share/:token` route |
-| AI summary generation | Add `POST /api/resumes/:id/ai/summary`; call LLM with experience data |
-| OAuth (Google) | Add passport strategy; `authRouter` already isolated in its own module |
-| Multiple users / teams | `userId` is already indexed; add `orgId` field and org-scoped queries |
-| Resume analytics | Add `views: number` field; increment on public fetch |
+| Run the API tests | `npm run backend:test` |
+| Lint the backend | `npm run backend:lint` |
+| Lint and type-check the client | `npm run lint` and `npm run type-check` |
+| Production build of the client | `npm run build` |
+
+## Adding a template
+
+1. Add the template ID to `TemplateId` in `backend/resumes/constants.py`.
+2. Add the same ID to the client's `TemplateId` union in `client/src/types/index.ts`.
+3. Create the component in `client/src/features/templates/components/` and register it in
+   `client/src/features/templates/registry/index.ts`.
+
+The template selector, preview and PDF export pick it up automatically.
+
+## ATS notes
+
+Every template follows these conventions, which keep them parseable by applicant tracking systems:
+semantic HTML (`<article>`, `<section>`, `<h1>`–`<h3>`, `<time>`), no tables, floats or absolute
+positioning, and skills as plain text.
+
+## License
+
+Private project.

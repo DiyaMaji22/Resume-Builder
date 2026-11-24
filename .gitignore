@@ -9,3 +9,6 @@ Thumbs.db
 *.zip
 __pycache__/
 *.pyc
+.venv/
+*.egg-info/
+.ruff_cache/
