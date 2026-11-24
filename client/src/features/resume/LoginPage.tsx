@@ -88,6 +88,27 @@ export function LoginPage() {
             </div>
 
             {!isReg && (
+              <div className="p-3 rounded-xl border border-indigo-500/20 bg-indigo-500/5 text-xs text-slate-600 dark:text-slate-300 space-y-1.5">
+                <div className="flex items-center justify-between font-medium">
+                  <span className="text-[11px] uppercase tracking-wider font-semibold text-indigo-500">Demo Account</span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setForm({ name: "", email: "diyamaji22@gmail.com", password: "password123" });
+                    }}
+                    className="text-[11px] font-semibold text-indigo-600 dark:text-indigo-400 hover:underline cursor-pointer"
+                  >
+                    Quick Fill
+                  </button>
+                </div>
+                <div className="flex justify-between text-[11px] text-slate-500 dark:text-slate-400">
+                  <span>diyamaji22@gmail.com</span>
+                  <span>password123</span>
+                </div>
+              </div>
+            )}
+
+            {!isReg && (
               <label className="flex items-center gap-2.5 text-xs cursor-pointer select-none"
                 style={{ color: "var(--text-secondary)" }}>
                 <input type="checkbox" checked={rememberMe}

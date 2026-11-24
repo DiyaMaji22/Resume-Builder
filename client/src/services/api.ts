@@ -2,7 +2,7 @@ import axios, { type AxiosError } from "axios";
 import type {
   Resume, ApiResponse, AuthPayload, User,
   ResumeUpdatePayload, ResumeCreatePayload, AISuggestRequest, AISuggestResponse,
-  ResumeSnapshot, ResumeStarter, ATSAnalysisResult,
+  ResumeSnapshot, ResumeStarter, ATSAnalysisResult, AnalyticsData,
 } from "@/types";
 import type { BenchmarkJob } from "@/data/starterResumes";
 
@@ -89,6 +89,15 @@ export const userApi = {
     api.put<ApiResponse>("/api/users/me/password", body),
   deleteAccount:  (body: { password: string }) =>
     api.delete<ApiResponse>("/api/users/me", { data: body }),
+};
+
+export const analyticsApi = {
+  getAnalytics: () =>
+    api.get<ApiResponse<AnalyticsData>>("/api/analytics"),
+  runSetup: () =>
+    api.post<ApiResponse<{ log: string }>>("/api/analytics/setup"),
+  runSeed: () =>
+    api.post<ApiResponse<{ log: string }>>("/api/analytics/seed"),
 };
 
 export default api;

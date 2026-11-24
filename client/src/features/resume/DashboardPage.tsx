@@ -4,7 +4,7 @@ import {
   FilePlus, Trash2, Edit3, Clock, FileText,
   LogOut, Copy, Check, X, MoreHorizontal,
   Settings, Sparkles, UploadCloud,
-  ArrowRight, ShieldCheck,
+  ArrowRight, ShieldCheck, BarChart3,
 } from "lucide-react";
 import { resumeApi } from "@/services/api";
 import { useAppSelector, useAppDispatch } from "@/hooks/useAppStore";
@@ -13,6 +13,7 @@ import { ConfirmModal } from "@/components/ui/ConfirmModal";
 import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
 import { StarterTemplatesModal } from "@/features/resume/components/StarterTemplatesModal";
 import { UploadResumeModal } from "@/features/resume/components/UploadResumeModal";
+import { AnalyticsModal } from "@/features/resume/components/AnalyticsModal";
 import { STARTER_RESUMES } from "@/data/starterResumes";
 import toast from "react-hot-toast";
 import type { Resume, ResumeStarter } from "@/types";
@@ -43,6 +44,7 @@ export function DashboardPage() {
   const [openMenuId,       setOpenMenuId]       = useState<string | null>(null);
   const [showStarterModal, setShowStarterModal] = useState(false);
   const [showUploadModal,  setShowUploadModal]  = useState(false);
+  const [showAnalyticsModal, setShowAnalyticsModal] = useState(false);
   const renameInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -167,6 +169,13 @@ export function DashboardPage() {
         />
       )}
 
+      {showAnalyticsModal && (
+        <AnalyticsModal
+          isOpen={showAnalyticsModal}
+          onClose={() => { setShowAnalyticsModal(false); }}
+        />
+      )}
+
       {/* ── Sidebar ── */}
       <aside className="sidebar w-56 shrink-0 h-screen sticky top-0 hidden lg:flex">
         {/* Logo */}
@@ -191,6 +200,13 @@ export function DashboardPage() {
           <Link to="/dashboard" className="sidebar-item" data-active="true">
             <FileText className="size-4 text-indigo-400" /> My Resumes
           </Link>
+          <button
+            type="button"
+            onClick={() => { setShowAnalyticsModal(true); }}
+            className="sidebar-item w-full text-left"
+          >
+            <BarChart3 className="size-4 text-indigo-400" /> Database Analytics
+          </button>
           <Link to="/settings" className="sidebar-item">
             <Settings className="size-4" /> Settings
           </Link>
@@ -254,6 +270,15 @@ export function DashboardPage() {
             >
               <Sparkles className="size-3.5 text-amber-500" />
               <span>Role Starters</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => { setShowAnalyticsModal(true); }}
+              className="btn btn-surface flex items-center gap-1.5 px-3 py-2 text-xs"
+              title="View PyMongo Aggregations & Database Analytics"
+            >
+              <BarChart3 className="size-3.5 text-indigo-500" />
+              <span>Analytics</span>
             </button>
             <button
               type="button"

@@ -6,6 +6,7 @@ import { authRouter } from "./modules/auth/auth.route.js";
 import { resumeRouter } from "./modules/resume/resume.route.js";
 import { aiRouter } from "./modules/ai/ai.route.js";
 import { userRouter } from "./modules/user/user.route.js";
+import { analyticsRouter } from "./modules/analytics/analytics.route.js";
 import { errorHandler } from "./middleware/errorHandler.js";
 import { requestLogger } from "./middleware/requestLogger.js";
 import { apiLimiter } from "./middleware/rateLimiter.js";
@@ -50,10 +51,11 @@ app.get("/health", (_req, res) => {
   res.json({ status: "ok", env: env.nodeEnv });
 });
 
-app.use("/api/auth",    authRouter);
-app.use("/api/resumes", resumeRouter);
-app.use("/api/ai",      aiRouter);
-app.use("/api/users",   userRouter);
+app.use("/api/auth",      authRouter);
+app.use("/api/resumes",   resumeRouter);
+app.use("/api/ai",        aiRouter);
+app.use("/api/users",     userRouter);
+app.use("/api/analytics", analyticsRouter);
 
 /* ── Global error handler (must be last) ── */
 app.use(errorHandler);

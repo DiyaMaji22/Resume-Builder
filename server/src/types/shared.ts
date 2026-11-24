@@ -166,3 +166,50 @@ export interface AISuggestRequest {
 export interface AISuggestResponse {
   suggestion: string;
 }
+
+// PyMongo Analytics & Aggregation types
+export interface TemplateUsageStat {
+  _id: TemplateId;
+  totalResumes: number;
+  publicResumes: number;
+}
+
+export interface TopSkillStat {
+  _id: string;
+  frequency: number;
+}
+
+export interface UserResumeStat {
+  userName: string;
+  resumeCount: number;
+}
+
+export interface CompletenessScoreStat {
+  title: string;
+  completenessScore: number;
+  expCount: number;
+  projCount: number;
+  skillCount: number;
+  hasSummary: boolean;
+}
+
+export interface MonthlyVelocityStat {
+  _id: string;
+  resumesCreated: number;
+}
+
+export interface AnalyticsSummary {
+  totalUsers: number;
+  totalResumes: number;
+  publicResumes: number;
+}
+
+export interface AnalyticsData {
+  templateUsage: TemplateUsageStat[];
+  topSkills: TopSkillStat[];
+  resumesPerUser: UserResumeStat[];
+  completenessScores: CompletenessScoreStat[];
+  monthlyVelocity: MonthlyVelocityStat[];
+  summary: AnalyticsSummary;
+  engine: string;
+}

@@ -7,7 +7,12 @@
     "build": "npm run build --prefix server && npm run build --prefix client",
     "install:all": "npm install --prefix server && npm install --prefix client",
     "lint": "npm run lint --prefix server && npm run lint --prefix client",
-    "type-check": "npm run type-check --prefix client"
+    "type-check": "npm run type-check --prefix client",
+    "pymongo": "python3 resume_builder_pymongo.py all",
+    "pymongo:reports": "python3 resume_builder_pymongo.py reports",
+    "pymongo:crud": "python3 resume_builder_pymongo.py crud",
+    "pymongo:seed": "python3 resume_builder_pymongo.py seed",
+    "pymongo:setup": "python3 resume_builder_pymongo.py setup"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"

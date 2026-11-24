@@ -7,3 +7,5 @@ Thumbs.db
 *.tsbuildinfo
 *.tar.gz
 *.zip
+__pycache__/
+*.pyc
