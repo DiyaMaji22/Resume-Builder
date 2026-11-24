@@ -184,54 +184,54 @@ export function DashboardPage() {
             <FileText className="size-4 text-white" />
           </div>
           <div>
-            <span className="font-bold text-sm tracking-tight text-white block">
+            <span className="font-bold text-sm tracking-tight block" style={{ color: "var(--text-primary)" }}>
               ResumeBuilder
             </span>
-            <span className="text-[10px] text-indigo-300/70 font-medium block">
+            <span className="text-[10px] font-medium block" style={{ color: "var(--accent-text)" }}>
               AI & ATS Studio
             </span>
           </div>
         </div>
 
-        <div className="divider mx-4" style={{ background: "rgba(255,255,255,0.06)" }} />
+        <div className="mx-4" style={{ height: "1px", background: "var(--border)" }} />
 
         {/* Nav */}
         <nav className="flex-1 py-4 space-y-1">
           <Link to="/dashboard" className="sidebar-item" data-active="true">
-            <FileText className="size-4 text-indigo-400" /> My Resumes
+            <FileText className="size-4 text-indigo-500" /> My Resumes
           </Link>
           <button
             type="button"
             onClick={() => { setShowAnalyticsModal(true); }}
             className="sidebar-item w-full text-left"
           >
-            <BarChart3 className="size-4 text-indigo-400" /> Database Analytics
+            <BarChart3 className="size-4 text-indigo-500" /> Database Analytics
           </button>
           <Link to="/settings" className="sidebar-item">
-            <Settings className="size-4" /> Settings
+            <Settings className="size-4 text-slate-400 group-hover:text-slate-600 dark:text-slate-400" /> Settings
           </Link>
         </nav>
 
         {/* User */}
         <div className="p-4">
-          <div className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl"
-            style={{ background: "rgba(255,255,255,0.06)" }}>
+          <div className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl border"
+            style={{ background: "var(--bg-subtle)", borderColor: "var(--border)" }}>
             <div className="size-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
               style={{ background: "var(--accent)" }}>
               {user?.name?.[0]?.toUpperCase() ?? "U"}
             </div>
             <div className="min-w-0">
-              <p className="text-xs font-semibold truncate" style={{ color: "var(--text-nav)" }}>
+              <p className="text-xs font-semibold truncate" style={{ color: "var(--text-primary)" }}>
                 {user?.name}
               </p>
-              <p className="text-[10px] truncate" style={{ color: "var(--text-nav-muted)" }}>
+              <p className="text-[10px] truncate" style={{ color: "var(--text-muted)" }}>
                 {user?.email}
               </p>
             </div>
           </div>
           <button type="button" onClick={() => { dispatch(logout()); navigate("/"); }}
             className="sidebar-item w-full mt-1 text-xs"
-            style={{ color: "var(--text-nav-muted)" }}>
+            style={{ color: "var(--text-muted)" }}>
             <LogOut className="size-3.5" /> Sign out
           </button>
         </div>
@@ -300,10 +300,18 @@ export function DashboardPage() {
         {/* Content */}
         <main className="flex-1 px-6 py-8 space-y-8">
           {/* Hero Welcome Banner */}
-          <div className="relative overflow-hidden p-6 rounded-2xl border border-indigo-500/15 bg-gradient-to-r from-indigo-950/15 via-slate-900/5 to-transparent backdrop-blur-sm"
-            style={{ background: "color-mix(in oklch, var(--surface) 92%, var(--accent-dim))" }}>
+          <div className="relative overflow-hidden p-6 rounded-2xl border"
+            style={{
+              background: "linear-gradient(135deg, color-mix(in oklch, var(--accent) 8%, var(--surface)) 0%, var(--surface) 100%)",
+              borderColor: "var(--border)"
+            }}>
             <div className="relative z-10 max-w-2xl space-y-2">
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold"
+                style={{
+                  background: "var(--accent-dim)",
+                  color: "var(--accent-text)",
+                  border: "1px solid color-mix(in oklch, var(--accent) 22%, transparent)"
+                }}>
                 <Sparkles className="size-3" />
                 <span>Next-Gen Career Engine • ATS & AI-Powered</span>
               </div>
@@ -315,14 +323,15 @@ export function DashboardPage() {
               </p>
             </div>
             {/* Subtle glow orb */}
-            <div className="absolute right-0 top-0 size-64 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute right-0 top-0 size-64 rounded-full blur-3xl pointer-events-none"
+              style={{ background: "var(--accent-dim)" }} />
           </div>
 
           {/* Quick-Start Shelf: Kaggle Benchmark Roles */}
           <section className="space-y-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="p-1 rounded-md bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400">
+                <span className="p-1 rounded-md" style={{ background: "var(--accent-dim)", color: "var(--accent-text)" }}>
                   <Sparkles className="size-3.5" />
                 </span>
                 <h2 className="text-sm font-bold" style={{ color: "var(--text-primary)" }}>
@@ -332,7 +341,8 @@ export function DashboardPage() {
               <button
                 type="button"
                 onClick={() => setShowStarterModal(true)}
-                className="text-xs font-semibold hover:underline flex items-center gap-1 text-blue-600 dark:text-blue-400"
+                className="text-xs font-semibold hover:underline flex items-center gap-1"
+                style={{ color: "var(--accent-text)" }}
               >
                 View all 6 roles <ArrowRight className="size-3" />
               </button>
@@ -342,20 +352,20 @@ export function DashboardPage() {
               {STARTER_RESUMES.slice(0, 3).map((starter) => (
                 <div
                   key={starter.id}
-                  className="card p-4 flex flex-col justify-between group hover:border-blue-400 dark:hover:border-blue-500 transition-all cursor-pointer"
+                  className="card p-4 flex flex-col justify-between group hover:border-indigo-400 dark:hover:border-indigo-500 transition-all cursor-pointer"
                   onClick={() => void handleCreateFromStarter(starter)}
                   style={{ borderRadius: "var(--r-xl)" }}
                 >
                   <div>
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-blue-500">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
                         {starter.category}
                       </span>
-                      <span className="text-[10px] flex items-center gap-1 text-emerald-600 font-semibold">
+                      <span className="text-[10px] flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-semibold">
                         <ShieldCheck className="size-3" /> ATS Verified
                       </span>
                     </div>
-                    <h3 className="text-sm font-bold group-hover:text-blue-600 transition-colors" style={{ color: "var(--text-primary)" }}>
+                    <h3 className="text-sm font-bold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors" style={{ color: "var(--text-primary)" }}>
                       {starter.role}
                     </h3>
                     <p className="text-[11px] line-clamp-2 mt-1" style={{ color: "var(--text-muted)" }}>
@@ -363,19 +373,21 @@ export function DashboardPage() {
                     </p>
                     <div className="flex flex-wrap gap-1 mt-2.5">
                       {starter.skills.slice(0, 4).map((s) => (
-                        <span key={s} className="text-[10px] px-1.5 py-0.5 rounded bg-black/5 dark:bg-white/5 font-medium" style={{ color: "var(--text-secondary)" }}>
+                        <span key={s} className="text-[10px] px-1.5 py-0.5 rounded font-medium border"
+                          style={{ background: "var(--bg-subtle)", borderColor: "var(--border)", color: "var(--text-secondary)" }}>
                           {s}
                         </span>
                       ))}
                       {starter.skills.length > 4 && (
-                        <span className="text-[10px] px-1 py-0.5 text-gray-400 font-medium">
+                        <span className="text-[10px] px-1 py-0.5 font-medium" style={{ color: "var(--text-muted)" }}>
                           +{starter.skills.length - 4}
                         </span>
                       )}
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between pt-3 mt-3 border-t text-xs font-semibold text-blue-600 dark:text-blue-400" style={{ borderColor: "var(--border)" }}>
+                  <div className="flex items-center justify-between pt-3 mt-3 border-t text-xs font-semibold"
+                    style={{ borderColor: "var(--border)", color: "var(--accent-text)" }}>
                     <span>Use this template</span>
                     <ArrowRight className="size-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>

@@ -10,8 +10,10 @@ export function ThemeProvider() {
     const root = document.documentElement;
     if (theme === "light") {
       root.removeAttribute("data-theme"); // light IS :root
+      root.classList.remove("dark");
     } else {
       root.setAttribute("data-theme", theme);
+      root.classList.add("dark");
     }
   }, [theme]);
 

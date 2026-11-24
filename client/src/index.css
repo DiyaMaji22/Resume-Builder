@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *, [data-theme="ocean"], [data-theme="ocean"] *, [data-theme="forest"], [data-theme="forest"] *, .dark, .dark *));
+
 /* ═══════════════════════════════════════════════════════════
    TAILWIND v4 THEME TOKENS
 ═══════════════════════════════════════════════════════════ */
@@ -34,25 +36,25 @@
   --bg-subtle:        #f1f5f9;   /* slate-100 */
   --surface:          #ffffff;   /* pure white */
   --surface-raised:   #ffffff;
-  --surface-nav:      #0b1329;   /* deep sleek midnight slate */
-  --surface-nav-item: rgba(255,255,255,0.06);
-  --surface-nav-active: rgba(99,102,241,0.18);
+  --surface-nav:      #ffffff;   /* crisp white sidebar in light mode */
+  --surface-nav-item: rgba(15, 23, 42, 0.05);
+  --surface-nav-active: #eef2ff; /* subtle indigo-50 tint for active item */
 
   /* Borders */
-  --border:           rgba(15, 23, 42, 0.08);
-  --border-strong:    rgba(15, 23, 42, 0.14);
+  --border:           #e2e8f0;   /* slate-200, crisp and clearly visible */
+  --border-strong:    #cbd5e1;   /* slate-300 */
 
   /* Text */
   --text-primary:     #0f172a;   /* slate-900 */
-  --text-secondary:   #475569;   /* slate-600 */
-  --text-muted:       #94a3b8;   /* slate-400 */
-  --text-nav:         rgba(255,255,255,0.92);
-  --text-nav-muted:   rgba(255,255,255,0.50);
+  --text-secondary:   #334155;   /* slate-700, high contrast */
+  --text-muted:       #64748b;   /* slate-500, >4.5:1 contrast on white */
+  --text-nav:         #0f172a;   /* slate-900 for sidebar text */
+  --text-nav-muted:   #64748b;   /* slate-500 for sidebar muted text */
 
   /* Accent — Vibrant Electric Indigo */
   --accent:           #4f46e5;   /* indigo-600 */
   --accent-dim:       rgba(79, 70, 229, 0.09);
-  --accent-text:      #4f46e5;
+  --accent-text:      #4338ca;   /* indigo-700, higher contrast on light */
   --accent-fg:        #ffffff;
   --accent-hover:     #4338ca;   /* indigo-700 */
 
@@ -68,7 +70,7 @@
   --shadow-md:        0 4px 12px -2px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
   --shadow-lg:        0 12px 28px -4px rgba(15, 23, 42, 0.12), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
   --shadow-glow:      0 0 20px rgba(79, 70, 229, 0.25);
-  --shadow-card:      0 1px 3px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.05);
+  --shadow-card:      0 1px 3px 0 rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.06);
 
   /* Radii */
   --r-sm:   6px;
@@ -92,16 +94,16 @@
   --bg-subtle:        #0d1424;
   --surface:          #0f172a;   /* slate-900 */
   --surface-raised:   #1e293b;   /* slate-800 */
-  --surface-nav:      #070b14;
+  --surface-nav:      #0b1222;
   --surface-nav-item: rgba(255,255,255,0.06);
   --surface-nav-active: rgba(99,102,241,0.22);
-  --border:           rgba(255,255,255,0.08);
-  --border-strong:    rgba(255,255,255,0.14);
+  --border:           rgba(255,255,255,0.09);
+  --border-strong:    rgba(255,255,255,0.16);
   --text-primary:     #f8fafc;
-  --text-secondary:   rgba(248,250,252,0.65);
-  --text-muted:       rgba(248,250,252,0.36);
-  --text-nav:         rgba(248,250,252,0.90);
-  --text-nav-muted:   rgba(248,250,252,0.45);
+  --text-secondary:   #cbd5e1;
+  --text-muted:       #94a3b8;
+  --text-nav:         #f8fafc;
+  --text-nav-muted:   #94a3b8;
   --accent:           #6366f1;   /* indigo-500 */
   --accent-dim:       rgba(99,102,241,0.16);
   --accent-text:      #818cf8;
@@ -269,8 +271,8 @@ body {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
   font-weight: 500; font-size: 0.8125rem;
   border-radius: var(--r-md); cursor: pointer; text-decoration: none; white-space: nowrap;
-  background: var(--surface); color: var(--text-secondary);
-  border: 1px solid var(--border-strong);
+  background: var(--surface); color: var(--text-primary);
+  border: 1px solid var(--border);
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
   transition: all var(--t-fast) var(--ease-out);
 }
@@ -375,12 +377,12 @@ body {
   color: var(--text-muted); margin-bottom: 5px;
 }
 
-/* ── Sidebar nav (dark olive from Dribbble) ── */
+/* ── Sidebar nav ── */
 .sidebar {
   background: var(--surface-nav);
-  border-right: 1px solid rgba(255,255,255,0.06);
+  border-right: 1px solid var(--border);
   display: flex; flex-direction: column;
-  transition: background var(--t-slow);
+  transition: background var(--t-slow), border-color var(--t-slow);
 }
 
 .sidebar-item {
@@ -388,7 +390,7 @@ body {
   padding: 9px 14px; font-size: 0.8125rem; font-weight: 500;
   color: var(--text-nav-muted); cursor: pointer; border: none;
   background: transparent; border-radius: var(--r-md);
-  margin: 1px 6px;
+  margin: 1px 8px;
   text-decoration: none;
   transition: all var(--t-fast) var(--ease-out);
 }
@@ -398,7 +400,8 @@ body {
 }
 .sidebar-item[data-active="true"] {
   background: var(--surface-nav-active);
-  color: var(--accent-text, #86efac);
+  color: var(--accent-text);
+  font-weight: 600;
 }
 
 /* ── Top navbar ── */
