@@ -1,0 +1,30 @@
+[project]
+name = "resume-builder-backend"
+version = "2.0.0"
+description = "Resume Builder API (Django + MongoDB)"
+requires-python = ">=3.12"
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+extend-exclude = ["*/migrations/*"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "DJ", "S", "RUF", "SIM", "ANN"]
+ignore = [
+    "ANN401",  # Any is used deliberately for JSON payloads
+    "S101",    # assert is fine in tests
+    "RUF001", "RUF002", "RUF003",  # typographic bullets and en-dashes in parser patterns are intentional
+]
+
+[tool.ruff.lint.per-file-ignores]
+"*/tests/*" = ["ANN", "S105", "S106", "E501", "S608"]
+"config/settings/*" = ["F403", "F405", "ANN", "S105"]
+"core/demo_data.py" = ["E501"]
+"resumes/ats_data.py" = ["E501"]
+"resumes/pdf_import.py" = ["E501"]
+"resumes/ats.py" = ["E501"]
+"*/models.py" = ["RUF012"]  # Django Meta options are class attributes by design
+
+[tool.ruff.format]
+quote-style = "double"

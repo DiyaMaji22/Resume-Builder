@@ -1,0 +1,1536 @@
+{
+  "atsCases": [
+    {
+      "starter": "starter-fullstack-dev",
+      "job": "full-stack-eng",
+      "result": {
+        "overallScore": 88,
+        "keywordScore": 73,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [
+          "TypeScript",
+          "CSS",
+          "React",
+          "Redux",
+          "Tailwind",
+          "Tailwind css",
+          "Node.js",
+          "Express",
+          "GraphQL",
+          "Rest",
+          "Microservices",
+          "MongoDB",
+          "PostgreSQL",
+          "AWS",
+          "Docker",
+          "CI/CD",
+          "Github actions",
+          "Jest",
+          "Cypress"
+        ],
+        "missingKeywords": [
+          "SQL",
+          "NoSQL",
+          "REST API",
+          "GCP",
+          "System design",
+          "Agile",
+          "Scrum"
+        ],
+        "strongActionVerbs": [
+          "Architected",
+          "Spearheaded",
+          "Developed",
+          "Deployed",
+          "Optimized",
+          "Automated",
+          "Mentored"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: SQL, NoSQL, REST API, GCP, System design."
+        ]
+      }
+    },
+    {
+      "starter": "starter-fullstack-dev",
+      "job": "data-scientist",
+      "result": {
+        "overallScore": 60,
+        "keywordScore": 10,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [
+          "AWS",
+          "Docker"
+        ],
+        "missingKeywords": [
+          "Python",
+          "SQL",
+          "FastAPI",
+          "GCP",
+          "Machine learning",
+          "Deep learning",
+          "NLP",
+          "Llms",
+          "PyTorch",
+          "TensorFlow",
+          "Scikit-learn",
+          "Pandas",
+          "Numpy",
+          "Spark",
+          "Mlflow",
+          "Data analysis",
+          "Statistics",
+          "Etl",
+          "Data visualization"
+        ],
+        "strongActionVerbs": [
+          "Architected",
+          "Spearheaded",
+          "Developed",
+          "Deployed",
+          "Optimized",
+          "Automated",
+          "Mentored"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: Python, SQL, FastAPI, GCP, Machine learning."
+        ]
+      }
+    },
+    {
+      "starter": "starter-fullstack-dev",
+      "job": "devops-cloud",
+      "result": {
+        "overallScore": 66,
+        "keywordScore": 25,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [
+          "AWS",
+          "Docker",
+          "CI/CD",
+          "Github actions"
+        ],
+        "missingKeywords": [
+          "Python",
+          "Bash",
+          "Shell",
+          "Kubernetes",
+          "Terraform",
+          "Ansible",
+          "Gitlab ci",
+          "Prometheus",
+          "Grafana",
+          "Linux",
+          "Site reliability",
+          "Sre"
+        ],
+        "strongActionVerbs": [
+          "Architected",
+          "Spearheaded",
+          "Developed",
+          "Deployed",
+          "Optimized",
+          "Automated",
+          "Mentored"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: Python, Bash, Shell, Kubernetes, Terraform."
+        ]
+      }
+    },
+    {
+      "starter": "starter-fullstack-dev",
+      "job": "product-manager",
+      "result": {
+        "overallScore": 55,
+        "keywordScore": 0,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [],
+        "missingKeywords": [
+          "SQL",
+          "Data analysis",
+          "Figma",
+          "User research",
+          "Wireframing",
+          "Roadmapping",
+          "Agile",
+          "Scrum",
+          "Jira",
+          "A/b testing",
+          "Product analytics",
+          "Mixpanel",
+          "Amplitude",
+          "Okrs",
+          "Go-to-market",
+          "Gtm"
+        ],
+        "strongActionVerbs": [
+          "Architected",
+          "Spearheaded",
+          "Developed",
+          "Deployed",
+          "Optimized",
+          "Automated",
+          "Mentored"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: SQL, Data analysis, Figma, User research, Wireframing."
+        ]
+      }
+    },
+    {
+      "starter": "starter-fullstack-dev",
+      "job": "uiux-designer",
+      "result": {
+        "overallScore": 59,
+        "keywordScore": 8,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [
+          "CSS"
+        ],
+        "missingKeywords": [
+          "HTML",
+          "Responsive design",
+          "Web accessibility",
+          "Wcag",
+          "Figma",
+          "UI/UX",
+          "User research",
+          "Wireframing",
+          "Prototyping",
+          "Design systems",
+          "Information architecture",
+          "Usability testing"
+        ],
+        "strongActionVerbs": [
+          "Architected",
+          "Spearheaded",
+          "Developed",
+          "Deployed",
+          "Optimized",
+          "Automated",
+          "Mentored"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: HTML, Responsive design, Web accessibility, Wcag, Figma."
+        ]
+      }
+    },
+    {
+      "starter": "starter-fullstack-dev",
+      "job": "growth-marketing",
+      "result": {
+        "overallScore": 55,
+        "keywordScore": 0,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [],
+        "missingKeywords": [
+          "A/b testing",
+          "SEO",
+          "Google ads",
+          "Meta ads",
+          "Google analytics",
+          "Hubspot",
+          "Conversion rate optimization",
+          "Cro",
+          "Copywriting",
+          "Looker studio"
+        ],
+        "strongActionVerbs": [
+          "Architected",
+          "Spearheaded",
+          "Developed",
+          "Deployed",
+          "Optimized",
+          "Automated",
+          "Mentored"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: A/b testing, SEO, Google ads, Meta ads, Google analytics."
+        ]
+      }
+    },
+    {
+      "starter": "starter-data-scientist",
+      "job": "full-stack-eng",
+      "result": {
+        "overallScore": 64,
+        "keywordScore": 19,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [
+          "SQL",
+          "Rest",
+          "Microservices",
+          "AWS",
+          "Docker"
+        ],
+        "missingKeywords": [
+          "TypeScript",
+          "NoSQL",
+          "CSS",
+          "React",
+          "Redux",
+          "Tailwind",
+          "Tailwind css",
+          "Node.js",
+          "Express",
+          "GraphQL",
+          "REST API",
+          "MongoDB",
+          "PostgreSQL",
+          "GCP",
+          "CI/CD",
+          "Github actions",
+          "System design",
+          "Agile",
+          "Scrum",
+          "Jest",
+          "Cypress"
+        ],
+        "strongActionVerbs": [
+          "Developed",
+          "Deployed",
+          "Automated",
+          "Designed",
+          "Formulated"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: TypeScript, NoSQL, CSS, React, Redux."
+        ]
+      }
+    },
+    {
+      "starter": "starter-data-scientist",
+      "job": "data-scientist",
+      "result": {
+        "overallScore": 89,
+        "keywordScore": 76,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [
+          "Python",
+          "SQL",
+          "FastAPI",
+          "AWS",
+          "Docker",
+          "Machine learning",
+          "Deep learning",
+          "NLP",
+          "PyTorch",
+          "TensorFlow",
+          "Scikit-learn",
+          "Pandas",
+          "Numpy",
+          "Spark",
+          "Etl",
+          "Data visualization"
+        ],
+        "missingKeywords": [
+          "GCP",
+          "Llms",
+          "Mlflow",
+          "Data analysis",
+          "Statistics"
+        ],
+        "strongActionVerbs": [
+          "Developed",
+          "Deployed",
+          "Automated",
+          "Designed",
+          "Formulated"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: GCP, Llms, Mlflow, Data analysis, Statistics."
+        ]
+      }
+    },
+    {
+      "starter": "starter-data-scientist",
+      "job": "devops-cloud",
+      "result": {
+        "overallScore": 64,
+        "keywordScore": 19,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [
+          "Python",
+          "AWS",
+          "Docker"
+        ],
+        "missingKeywords": [
+          "Bash",
+          "Shell",
+          "Kubernetes",
+          "Terraform",
+          "Ansible",
+          "CI/CD",
+          "Github actions",
+          "Gitlab ci",
+          "Prometheus",
+          "Grafana",
+          "Linux",
+          "Site reliability",
+          "Sre"
+        ],
+        "strongActionVerbs": [
+          "Developed",
+          "Deployed",
+          "Automated",
+          "Designed",
+          "Formulated"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: Bash, Shell, Kubernetes, Terraform, Ansible."
+        ]
+      }
+    },
+    {
+      "starter": "starter-data-scientist",
+      "job": "product-manager",
+      "result": {
+        "overallScore": 58,
+        "keywordScore": 6,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [
+          "SQL"
+        ],
+        "missingKeywords": [
+          "Data analysis",
+          "Figma",
+          "User research",
+          "Wireframing",
+          "Roadmapping",
+          "Agile",
+          "Scrum",
+          "Jira",
+          "A/b testing",
+          "Product analytics",
+          "Mixpanel",
+          "Amplitude",
+          "Okrs",
+          "Go-to-market",
+          "Gtm"
+        ],
+        "strongActionVerbs": [
+          "Developed",
+          "Deployed",
+          "Automated",
+          "Designed",
+          "Formulated"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: Data analysis, Figma, User research, Wireframing, Roadmapping."
+        ]
+      }
+    },
+    {
+      "starter": "starter-data-scientist",
+      "job": "uiux-designer",
+      "result": {
+        "overallScore": 55,
+        "keywordScore": 0,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [],
+        "missingKeywords": [
+          "HTML",
+          "CSS",
+          "Responsive design",
+          "Web accessibility",
+          "Wcag",
+          "Figma",
+          "UI/UX",
+          "User research",
+          "Wireframing",
+          "Prototyping",
+          "Design systems",
+          "Information architecture",
+          "Usability testing"
+        ],
+        "strongActionVerbs": [
+          "Developed",
+          "Deployed",
+          "Automated",
+          "Designed",
+          "Formulated"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: HTML, CSS, Responsive design, Web accessibility, Wcag."
+        ]
+      }
+    },
+    {
+      "starter": "starter-data-scientist",
+      "job": "growth-marketing",
+      "result": {
+        "overallScore": 55,
+        "keywordScore": 0,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [],
+        "missingKeywords": [
+          "A/b testing",
+          "SEO",
+          "Google ads",
+          "Meta ads",
+          "Google analytics",
+          "Hubspot",
+          "Conversion rate optimization",
+          "Cro",
+          "Copywriting",
+          "Looker studio"
+        ],
+        "strongActionVerbs": [
+          "Developed",
+          "Deployed",
+          "Automated",
+          "Designed",
+          "Formulated"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: A/b testing, SEO, Google ads, Meta ads, Google analytics."
+        ]
+      }
+    },
+    {
+      "starter": "starter-devops-cloud",
+      "job": "full-stack-eng",
+      "result": {
+        "overallScore": 62,
+        "keywordScore": 23,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [
+          "Microservices",
+          "AWS",
+          "Docker",
+          "CI/CD",
+          "Github actions",
+          "System design"
+        ],
+        "missingKeywords": [
+          "TypeScript",
+          "SQL",
+          "NoSQL",
+          "CSS",
+          "React",
+          "Redux",
+          "Tailwind",
+          "Tailwind css",
+          "Node.js",
+          "Express",
+          "GraphQL",
+          "Rest",
+          "REST API",
+          "MongoDB",
+          "PostgreSQL",
+          "GCP",
+          "Agile",
+          "Scrum",
+          "Jest",
+          "Cypress"
+        ],
+        "strongActionVerbs": [
+          "Orchestrated",
+          "Deployed",
+          "Automated",
+          "Reduced"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: TypeScript, SQL, NoSQL, CSS, React."
+        ]
+      }
+    },
+    {
+      "starter": "starter-devops-cloud",
+      "job": "data-scientist",
+      "result": {
+        "overallScore": 58,
+        "keywordScore": 14,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [
+          "Python",
+          "AWS",
+          "Docker"
+        ],
+        "missingKeywords": [
+          "SQL",
+          "FastAPI",
+          "GCP",
+          "Machine learning",
+          "Deep learning",
+          "NLP",
+          "Llms",
+          "PyTorch",
+          "TensorFlow",
+          "Scikit-learn",
+          "Pandas",
+          "Numpy",
+          "Spark",
+          "Mlflow",
+          "Data analysis",
+          "Statistics",
+          "Etl",
+          "Data visualization"
+        ],
+        "strongActionVerbs": [
+          "Orchestrated",
+          "Deployed",
+          "Automated",
+          "Reduced"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: SQL, FastAPI, GCP, Machine learning, Deep learning."
+        ]
+      }
+    },
+    {
+      "starter": "starter-devops-cloud",
+      "job": "devops-cloud",
+      "result": {
+        "overallScore": 88,
+        "keywordScore": 81,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [
+          "Python",
+          "Bash",
+          "AWS",
+          "Docker",
+          "Kubernetes",
+          "Terraform",
+          "Ansible",
+          "CI/CD",
+          "Github actions",
+          "Prometheus",
+          "Grafana",
+          "Linux",
+          "Site reliability"
+        ],
+        "missingKeywords": [
+          "Shell",
+          "Gitlab ci",
+          "Sre"
+        ],
+        "strongActionVerbs": [
+          "Orchestrated",
+          "Deployed",
+          "Automated",
+          "Reduced"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: Shell, Gitlab ci, Sre."
+        ]
+      }
+    },
+    {
+      "starter": "starter-devops-cloud",
+      "job": "product-manager",
+      "result": {
+        "overallScore": 52,
+        "keywordScore": 0,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [],
+        "missingKeywords": [
+          "SQL",
+          "Data analysis",
+          "Figma",
+          "User research",
+          "Wireframing",
+          "Roadmapping",
+          "Agile",
+          "Scrum",
+          "Jira",
+          "A/b testing",
+          "Product analytics",
+          "Mixpanel",
+          "Amplitude",
+          "Okrs",
+          "Go-to-market",
+          "Gtm"
+        ],
+        "strongActionVerbs": [
+          "Orchestrated",
+          "Deployed",
+          "Automated",
+          "Reduced"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: SQL, Data analysis, Figma, User research, Wireframing."
+        ]
+      }
+    },
+    {
+      "starter": "starter-devops-cloud",
+      "job": "uiux-designer",
+      "result": {
+        "overallScore": 52,
+        "keywordScore": 0,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [],
+        "missingKeywords": [
+          "HTML",
+          "CSS",
+          "Responsive design",
+          "Web accessibility",
+          "Wcag",
+          "Figma",
+          "UI/UX",
+          "User research",
+          "Wireframing",
+          "Prototyping",
+          "Design systems",
+          "Information architecture",
+          "Usability testing"
+        ],
+        "strongActionVerbs": [
+          "Orchestrated",
+          "Deployed",
+          "Automated",
+          "Reduced"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: HTML, CSS, Responsive design, Web accessibility, Wcag."
+        ]
+      }
+    },
+    {
+      "starter": "starter-devops-cloud",
+      "job": "growth-marketing",
+      "result": {
+        "overallScore": 52,
+        "keywordScore": 0,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [],
+        "missingKeywords": [
+          "A/b testing",
+          "SEO",
+          "Google ads",
+          "Meta ads",
+          "Google analytics",
+          "Hubspot",
+          "Conversion rate optimization",
+          "Cro",
+          "Copywriting",
+          "Looker studio"
+        ],
+        "strongActionVerbs": [
+          "Orchestrated",
+          "Deployed",
+          "Automated",
+          "Reduced"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: A/b testing, SEO, Google ads, Meta ads, Google analytics."
+        ]
+      }
+    },
+    {
+      "starter": "starter-uiux-designer",
+      "job": "full-stack-eng",
+      "result": {
+        "overallScore": 52,
+        "keywordScore": 23,
+        "formattingScore": 100,
+        "quantifiedScore": 33,
+        "matchedKeywords": [
+          "CSS",
+          "React",
+          "Tailwind",
+          "Tailwind css",
+          "System design",
+          "Agile"
+        ],
+        "missingKeywords": [
+          "TypeScript",
+          "SQL",
+          "NoSQL",
+          "Redux",
+          "Node.js",
+          "Express",
+          "GraphQL",
+          "Rest",
+          "REST API",
+          "Microservices",
+          "MongoDB",
+          "PostgreSQL",
+          "AWS",
+          "GCP",
+          "Docker",
+          "CI/CD",
+          "Github actions",
+          "Scrum",
+          "Jest",
+          "Cypress"
+        ],
+        "strongActionVerbs": [
+          "Spearheaded",
+          "Designed",
+          "Established",
+          "Facilitated"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: TypeScript, SQL, NoSQL, Redux, Node.js.",
+          "Quantify your bullet points with metrics (e.g. 'reduced latency by 35%', 'managed $60k budget', 'scaled to 1M users')."
+        ]
+      }
+    },
+    {
+      "starter": "starter-uiux-designer",
+      "job": "data-scientist",
+      "result": {
+        "overallScore": 42,
+        "keywordScore": 0,
+        "formattingScore": 100,
+        "quantifiedScore": 33,
+        "matchedKeywords": [],
+        "missingKeywords": [
+          "Python",
+          "SQL",
+          "FastAPI",
+          "AWS",
+          "GCP",
+          "Docker",
+          "Machine learning",
+          "Deep learning",
+          "NLP",
+          "Llms",
+          "PyTorch",
+          "TensorFlow",
+          "Scikit-learn",
+          "Pandas",
+          "Numpy",
+          "Spark",
+          "Mlflow",
+          "Data analysis",
+          "Statistics",
+          "Etl",
+          "Data visualization"
+        ],
+        "strongActionVerbs": [
+          "Spearheaded",
+          "Designed",
+          "Established",
+          "Facilitated"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: Python, SQL, FastAPI, AWS, GCP.",
+          "Quantify your bullet points with metrics (e.g. 'reduced latency by 35%', 'managed $60k budget', 'scaled to 1M users')."
+        ]
+      }
+    },
+    {
+      "starter": "starter-uiux-designer",
+      "job": "devops-cloud",
+      "result": {
+        "overallScore": 42,
+        "keywordScore": 0,
+        "formattingScore": 100,
+        "quantifiedScore": 33,
+        "matchedKeywords": [],
+        "missingKeywords": [
+          "Python",
+          "Bash",
+          "Shell",
+          "AWS",
+          "Docker",
+          "Kubernetes",
+          "Terraform",
+          "Ansible",
+          "CI/CD",
+          "Github actions",
+          "Gitlab ci",
+          "Prometheus",
+          "Grafana",
+          "Linux",
+          "Site reliability",
+          "Sre"
+        ],
+        "strongActionVerbs": [
+          "Spearheaded",
+          "Designed",
+          "Established",
+          "Facilitated"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: Python, Bash, Shell, AWS, Docker.",
+          "Quantify your bullet points with metrics (e.g. 'reduced latency by 35%', 'managed $60k budget', 'scaled to 1M users')."
+        ]
+      }
+    },
+    {
+      "starter": "starter-uiux-designer",
+      "job": "product-manager",
+      "result": {
+        "overallScore": 53,
+        "keywordScore": 25,
+        "formattingScore": 100,
+        "quantifiedScore": 33,
+        "matchedKeywords": [
+          "Figma",
+          "User research",
+          "Wireframing",
+          "Agile"
+        ],
+        "missingKeywords": [
+          "SQL",
+          "Data analysis",
+          "Roadmapping",
+          "Scrum",
+          "Jira",
+          "A/b testing",
+          "Product analytics",
+          "Mixpanel",
+          "Amplitude",
+          "Okrs",
+          "Go-to-market",
+          "Gtm"
+        ],
+        "strongActionVerbs": [
+          "Spearheaded",
+          "Designed",
+          "Established",
+          "Facilitated"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: SQL, Data analysis, Roadmapping, Scrum, Jira.",
+          "Quantify your bullet points with metrics (e.g. 'reduced latency by 35%', 'managed $60k budget', 'scaled to 1M users')."
+        ]
+      }
+    },
+    {
+      "starter": "starter-uiux-designer",
+      "job": "uiux-designer",
+      "result": {
+        "overallScore": 77,
+        "keywordScore": 77,
+        "formattingScore": 100,
+        "quantifiedScore": 33,
+        "matchedKeywords": [
+          "CSS",
+          "Wcag",
+          "Figma",
+          "UI/UX",
+          "User research",
+          "Wireframing",
+          "Prototyping",
+          "Design systems",
+          "Information architecture",
+          "Usability testing"
+        ],
+        "missingKeywords": [
+          "HTML",
+          "Responsive design",
+          "Web accessibility"
+        ],
+        "strongActionVerbs": [
+          "Spearheaded",
+          "Designed",
+          "Established",
+          "Facilitated"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: HTML, Responsive design, Web accessibility.",
+          "Quantify your bullet points with metrics (e.g. 'reduced latency by 35%', 'managed $60k budget', 'scaled to 1M users')."
+        ]
+      }
+    },
+    {
+      "starter": "starter-uiux-designer",
+      "job": "growth-marketing",
+      "result": {
+        "overallScore": 42,
+        "keywordScore": 0,
+        "formattingScore": 100,
+        "quantifiedScore": 33,
+        "matchedKeywords": [],
+        "missingKeywords": [
+          "A/b testing",
+          "SEO",
+          "Google ads",
+          "Meta ads",
+          "Google analytics",
+          "Hubspot",
+          "Conversion rate optimization",
+          "Cro",
+          "Copywriting",
+          "Looker studio"
+        ],
+        "strongActionVerbs": [
+          "Spearheaded",
+          "Designed",
+          "Established",
+          "Facilitated"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: A/b testing, SEO, Google ads, Meta ads, Google analytics.",
+          "Quantify your bullet points with metrics (e.g. 'reduced latency by 35%', 'managed $60k budget', 'scaled to 1M users')."
+        ]
+      }
+    },
+    {
+      "starter": "starter-product-manager",
+      "job": "full-stack-eng",
+      "result": {
+        "overallScore": 46,
+        "keywordScore": 12,
+        "formattingScore": 100,
+        "quantifiedScore": 67,
+        "matchedKeywords": [
+          "SQL",
+          "Agile",
+          "Scrum"
+        ],
+        "missingKeywords": [
+          "TypeScript",
+          "NoSQL",
+          "CSS",
+          "React",
+          "Redux",
+          "Tailwind",
+          "Tailwind css",
+          "Node.js",
+          "Express",
+          "GraphQL",
+          "Rest",
+          "REST API",
+          "Microservices",
+          "MongoDB",
+          "PostgreSQL",
+          "AWS",
+          "GCP",
+          "Docker",
+          "CI/CD",
+          "Github actions",
+          "System design",
+          "Jest",
+          "Cypress"
+        ],
+        "strongActionVerbs": [
+          "Designed",
+          "Directed"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: TypeScript, NoSQL, CSS, React, Redux.",
+          "Begin experience bullet points with authoritative action verbs (e.g., Architected, Engineered, Spearheaded, Optimized)."
+        ]
+      }
+    },
+    {
+      "starter": "starter-product-manager",
+      "job": "data-scientist",
+      "result": {
+        "overallScore": 43,
+        "keywordScore": 5,
+        "formattingScore": 100,
+        "quantifiedScore": 67,
+        "matchedKeywords": [
+          "SQL"
+        ],
+        "missingKeywords": [
+          "Python",
+          "FastAPI",
+          "AWS",
+          "GCP",
+          "Docker",
+          "Machine learning",
+          "Deep learning",
+          "NLP",
+          "Llms",
+          "PyTorch",
+          "TensorFlow",
+          "Scikit-learn",
+          "Pandas",
+          "Numpy",
+          "Spark",
+          "Mlflow",
+          "Data analysis",
+          "Statistics",
+          "Etl",
+          "Data visualization"
+        ],
+        "strongActionVerbs": [
+          "Designed",
+          "Directed"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: Python, FastAPI, AWS, GCP, Docker.",
+          "Begin experience bullet points with authoritative action verbs (e.g., Architected, Engineered, Spearheaded, Optimized)."
+        ]
+      }
+    },
+    {
+      "starter": "starter-product-manager",
+      "job": "devops-cloud",
+      "result": {
+        "overallScore": 41,
+        "keywordScore": 0,
+        "formattingScore": 100,
+        "quantifiedScore": 67,
+        "matchedKeywords": [],
+        "missingKeywords": [
+          "Python",
+          "Bash",
+          "Shell",
+          "AWS",
+          "Docker",
+          "Kubernetes",
+          "Terraform",
+          "Ansible",
+          "CI/CD",
+          "Github actions",
+          "Gitlab ci",
+          "Prometheus",
+          "Grafana",
+          "Linux",
+          "Site reliability",
+          "Sre"
+        ],
+        "strongActionVerbs": [
+          "Designed",
+          "Directed"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: Python, Bash, Shell, AWS, Docker.",
+          "Begin experience bullet points with authoritative action verbs (e.g., Architected, Engineered, Spearheaded, Optimized)."
+        ]
+      }
+    },
+    {
+      "starter": "starter-product-manager",
+      "job": "product-manager",
+      "result": {
+        "overallScore": 75,
+        "keywordScore": 75,
+        "formattingScore": 100,
+        "quantifiedScore": 67,
+        "matchedKeywords": [
+          "SQL",
+          "User research",
+          "Wireframing",
+          "Roadmapping",
+          "Agile",
+          "Scrum",
+          "Jira",
+          "A/b testing",
+          "Product analytics",
+          "Mixpanel",
+          "Go-to-market",
+          "Gtm"
+        ],
+        "missingKeywords": [
+          "Data analysis",
+          "Figma",
+          "Amplitude",
+          "Okrs"
+        ],
+        "strongActionVerbs": [
+          "Designed",
+          "Directed"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: Data analysis, Figma, Amplitude, Okrs.",
+          "Begin experience bullet points with authoritative action verbs (e.g., Architected, Engineered, Spearheaded, Optimized)."
+        ]
+      }
+    },
+    {
+      "starter": "starter-product-manager",
+      "job": "uiux-designer",
+      "result": {
+        "overallScore": 48,
+        "keywordScore": 15,
+        "formattingScore": 100,
+        "quantifiedScore": 67,
+        "matchedKeywords": [
+          "User research",
+          "Wireframing"
+        ],
+        "missingKeywords": [
+          "HTML",
+          "CSS",
+          "Responsive design",
+          "Web accessibility",
+          "Wcag",
+          "Figma",
+          "UI/UX",
+          "Prototyping",
+          "Design systems",
+          "Information architecture",
+          "Usability testing"
+        ],
+        "strongActionVerbs": [
+          "Designed",
+          "Directed"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: HTML, CSS, Responsive design, Web accessibility, Wcag.",
+          "Begin experience bullet points with authoritative action verbs (e.g., Architected, Engineered, Spearheaded, Optimized)."
+        ]
+      }
+    },
+    {
+      "starter": "starter-product-manager",
+      "job": "growth-marketing",
+      "result": {
+        "overallScore": 50,
+        "keywordScore": 20,
+        "formattingScore": 100,
+        "quantifiedScore": 67,
+        "matchedKeywords": [
+          "A/b testing",
+          "Hubspot"
+        ],
+        "missingKeywords": [
+          "SEO",
+          "Google ads",
+          "Meta ads",
+          "Google analytics",
+          "Conversion rate optimization",
+          "Cro",
+          "Copywriting",
+          "Looker studio"
+        ],
+        "strongActionVerbs": [
+          "Designed",
+          "Directed"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: SEO, Google ads, Meta ads, Google analytics, Conversion rate optimization.",
+          "Begin experience bullet points with authoritative action verbs (e.g., Architected, Engineered, Spearheaded, Optimized)."
+        ]
+      }
+    },
+    {
+      "starter": "starter-growth-marketing",
+      "job": "full-stack-eng",
+      "result": {
+        "overallScore": 52,
+        "keywordScore": 0,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [],
+        "missingKeywords": [
+          "TypeScript",
+          "SQL",
+          "NoSQL",
+          "CSS",
+          "React",
+          "Redux",
+          "Tailwind",
+          "Tailwind css",
+          "Node.js",
+          "Express",
+          "GraphQL",
+          "Rest",
+          "REST API",
+          "Microservices",
+          "MongoDB",
+          "PostgreSQL",
+          "AWS",
+          "GCP",
+          "Docker",
+          "CI/CD",
+          "Github actions",
+          "System design",
+          "Agile",
+          "Scrum",
+          "Jest",
+          "Cypress"
+        ],
+        "strongActionVerbs": [
+          "Engineered",
+          "Automated",
+          "Designed",
+          "Directed"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: TypeScript, SQL, NoSQL, CSS, React."
+        ]
+      }
+    },
+    {
+      "starter": "starter-growth-marketing",
+      "job": "data-scientist",
+      "result": {
+        "overallScore": 52,
+        "keywordScore": 0,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [],
+        "missingKeywords": [
+          "Python",
+          "SQL",
+          "FastAPI",
+          "AWS",
+          "GCP",
+          "Docker",
+          "Machine learning",
+          "Deep learning",
+          "NLP",
+          "Llms",
+          "PyTorch",
+          "TensorFlow",
+          "Scikit-learn",
+          "Pandas",
+          "Numpy",
+          "Spark",
+          "Mlflow",
+          "Data analysis",
+          "Statistics",
+          "Etl",
+          "Data visualization"
+        ],
+        "strongActionVerbs": [
+          "Engineered",
+          "Automated",
+          "Designed",
+          "Directed"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: Python, SQL, FastAPI, AWS, GCP."
+        ]
+      }
+    },
+    {
+      "starter": "starter-growth-marketing",
+      "job": "devops-cloud",
+      "result": {
+        "overallScore": 52,
+        "keywordScore": 0,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [],
+        "missingKeywords": [
+          "Python",
+          "Bash",
+          "Shell",
+          "AWS",
+          "Docker",
+          "Kubernetes",
+          "Terraform",
+          "Ansible",
+          "CI/CD",
+          "Github actions",
+          "Gitlab ci",
+          "Prometheus",
+          "Grafana",
+          "Linux",
+          "Site reliability",
+          "Sre"
+        ],
+        "strongActionVerbs": [
+          "Engineered",
+          "Automated",
+          "Designed",
+          "Directed"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: Python, Bash, Shell, AWS, Docker."
+        ]
+      }
+    },
+    {
+      "starter": "starter-growth-marketing",
+      "job": "product-manager",
+      "result": {
+        "overallScore": 55,
+        "keywordScore": 6,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [
+          "A/b testing"
+        ],
+        "missingKeywords": [
+          "SQL",
+          "Data analysis",
+          "Figma",
+          "User research",
+          "Wireframing",
+          "Roadmapping",
+          "Agile",
+          "Scrum",
+          "Jira",
+          "Product analytics",
+          "Mixpanel",
+          "Amplitude",
+          "Okrs",
+          "Go-to-market",
+          "Gtm"
+        ],
+        "strongActionVerbs": [
+          "Engineered",
+          "Automated",
+          "Designed",
+          "Directed"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: SQL, Data analysis, Figma, User research, Wireframing."
+        ]
+      }
+    },
+    {
+      "starter": "starter-growth-marketing",
+      "job": "uiux-designer",
+      "result": {
+        "overallScore": 52,
+        "keywordScore": 0,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [],
+        "missingKeywords": [
+          "HTML",
+          "CSS",
+          "Responsive design",
+          "Web accessibility",
+          "Wcag",
+          "Figma",
+          "UI/UX",
+          "User research",
+          "Wireframing",
+          "Prototyping",
+          "Design systems",
+          "Information architecture",
+          "Usability testing"
+        ],
+        "strongActionVerbs": [
+          "Engineered",
+          "Automated",
+          "Designed",
+          "Directed"
+        ],
+        "recommendations": [
+          "Include target job keywords missing from your resume: HTML, CSS, Responsive design, Web accessibility, Wcag."
+        ]
+      }
+    },
+    {
+      "starter": "starter-growth-marketing",
+      "job": "growth-marketing",
+      "result": {
+        "overallScore": 97,
+        "keywordScore": 100,
+        "formattingScore": 100,
+        "quantifiedScore": 100,
+        "matchedKeywords": [
+          "A/b testing",
+          "SEO",
+          "Google ads",
+          "Meta ads",
+          "Google analytics",
+          "Hubspot",
+          "Conversion rate optimization",
+          "Cro",
+          "Copywriting",
+          "Looker studio"
+        ],
+        "missingKeywords": [],
+        "strongActionVerbs": [
+          "Engineered",
+          "Automated",
+          "Designed",
+          "Directed"
+        ],
+        "recommendations": [
+          "Outstanding resume! Well aligned with this job specification."
+        ]
+      }
+    },
+    {
+      "starter": "edge",
+      "job": "short-jd",
+      "result": {
+        "overallScore": 10,
+        "keywordScore": 0,
+        "formattingScore": 0,
+        "quantifiedScore": 0,
+        "matchedKeywords": [],
+        "missingKeywords": [
+          "Python",
+          "Go",
+          "Docker"
+        ],
+        "strongActionVerbs": [],
+        "recommendations": [
+          "Include target job keywords missing from your resume: Python, Go, Docker.",
+          "Quantify your bullet points with metrics (e.g. 'reduced latency by 35%', 'managed $60k budget', 'scaled to 1M users').",
+          "Begin experience bullet points with authoritative action verbs (e.g., Architected, Engineered, Spearheaded, Optimized).",
+          "Add a LinkedIn URL; recruiter ATS algorithms favor profiles with verified links.",
+          "Expand your Skills section to at least 8-15 relevant hard skills."
+        ]
+      }
+    },
+    {
+      "starter": "edge",
+      "job": "empty-jd",
+      "result": {
+        "overallScore": 36,
+        "keywordScore": 80,
+        "formattingScore": 0,
+        "quantifiedScore": 0,
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "strongActionVerbs": [],
+        "recommendations": [
+          "Quantify your bullet points with metrics (e.g. 'reduced latency by 35%', 'managed $60k budget', 'scaled to 1M users').",
+          "Begin experience bullet points with authoritative action verbs (e.g., Architected, Engineered, Spearheaded, Optimized).",
+          "Add a LinkedIn URL; recruiter ATS algorithms favor profiles with verified links.",
+          "Expand your Skills section to at least 8-15 relevant hard skills."
+        ]
+      }
+    }
+  ],
+  "kw": [
+    {
+      "text": "We use C++ and C# with Node.js, CI/CD on AWS.",
+      "keywords": [
+        "c++",
+        "c#",
+        "node.js",
+        "aws",
+        "ci/cd"
+      ]
+    },
+    {
+      "text": "Experience with rest api design; go to market strategy; rest of team.",
+      "keywords": [
+        "go",
+        "rest",
+        "rest api"
+      ]
+    },
+    {
+      "text": "TypeScript, React.js, Next.js, PostgreSQL & MongoDB.",
+      "keywords": [
+        "typescript",
+        "react",
+        "react.js",
+        "next.js",
+        "mongodb",
+        "postgresql"
+      ]
+    },
+    {
+      "text": "SEO, SEM, GA4 and A/B testing (Amplitude).",
+      "keywords": [
+        "a/b testing",
+        "amplitude",
+        "seo",
+        "sem",
+        "ga4"
+      ]
+    }
+  ]
+}

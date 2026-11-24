@@ -1,0 +1,133 @@
+[
+  {
+    "name": "standard",
+    "text": "Jane Doe\njane.doe@example.com | +1 415 555 0134\nSan Francisco, CA\nlinkedin.com/in/janedoe github.com/janedoe\n\nProfessional Summary\nFull stack engineer with 6 years of experience building scalable web apps. Strong in TypeScript, React and Node.js.\n\nExperience\nSenior Engineer | Acme Corp | 2021 - Present\n• Architected a microservices platform on AWS and Docker\n• Reduced API latency by 35% through caching\n\nEducation\nBachelor of Science in Computer Science\nUniversity of California, Berkeley 2016 - 2020\n\nSkills\nTypeScript, React, Node.js, PostgreSQL, Docker, AWS, Jest\n\nProjects\nOpen Source Dashboard\nBuilt with React and Redux\n\nCertifications\nAWS Certified Developer – Associate\nGoogle Analytics Individual Qualification",
+    "parsed": {
+      "title": "Jane Doe's Resume",
+      "professionalSummary": "Full stack engineer with 6 years of experience building scalable web apps. Strong in TypeScript, React and Node.js.",
+      "personalInfo": {
+        "fullName": "Jane Doe",
+        "email": "jane.doe@example.com",
+        "phone": "+1 415 555 0134",
+        "location": "San Francisco, CA",
+        "linkedin": "https://linkedin.com/in/janedoe",
+        "website": "",
+        "github": "https://github.com/janedoe",
+        "image": ""
+      },
+      "experience": [
+        {
+          "id": "exp-1795507891436-gl58cz",
+          "company": "Acme Corp",
+          "position": "Senior Engineer",
+          "startDate": "",
+          "endDate": "",
+          "isCurrent": true,
+          "description": "• Architected a microservices platform on AWS and Docker\n• Reduced API latency by 35% through caching"
+        }
+      ],
+      "education": [
+        {
+          "id": "edu-1795507891436-r2i857",
+          "institution": "University of California",
+          "degree": "Bachelor of Science in Computer Science",
+          "field": "",
+          "graduationDate": "2016",
+          "gpa": ""
+        }
+      ],
+      "projects": [
+        {
+          "id": "proj-1795507891436-58jrbj",
+          "name": "Open Source Dashboard",
+          "type": "Application",
+          "description": "Built with React and Redux",
+          "url": "",
+          "technologies": [
+            "TypeScript",
+            "React",
+            "Node.js",
+            "PostgreSQL"
+          ]
+        }
+      ],
+      "certifications": [
+        {
+          "id": "cert-1795507891436-f082z2",
+          "name": "AWS Certified Developer – Associate",
+          "issuer": "Accredited Provider",
+          "date": "",
+          "url": ""
+        },
+        {
+          "id": "cert-1795507891436-8d1oxu",
+          "name": "Google Analytics Individual Qualification",
+          "issuer": "Accredited Provider",
+          "date": "",
+          "url": ""
+        }
+      ],
+      "skills": [
+        "TypeScript",
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Docker",
+        "AWS",
+        "Jest",
+        "Typescript",
+        "Redux",
+        "Microservices",
+        "Postgresql",
+        "Google analytics",
+        "JEST"
+      ]
+    }
+  },
+  {
+    "name": "noHeaders",
+    "text": "Arjun Mehta\narjun@mail.io\nBengaluru, Karnataka",
+    "parsed": {
+      "title": "Arjun Mehta's Resume",
+      "professionalSummary": "",
+      "personalInfo": {
+        "fullName": "Arjun Mehta",
+        "email": "arjun@mail.io",
+        "phone": "",
+        "location": "Bengaluru, Karnataka",
+        "linkedin": "",
+        "website": "",
+        "github": "",
+        "image": ""
+      },
+      "experience": [],
+      "education": [],
+      "projects": [],
+      "certifications": [],
+      "skills": []
+    }
+  },
+  {
+    "name": "emptyish",
+    "text": "   \n\n  ",
+    "parsed": {
+      "title": "emptyish",
+      "professionalSummary": "",
+      "personalInfo": {
+        "fullName": "",
+        "email": "",
+        "phone": "",
+        "location": "",
+        "linkedin": "",
+        "website": "",
+        "github": "",
+        "image": ""
+      },
+      "experience": [],
+      "education": [],
+      "projects": [],
+      "certifications": [],
+      "skills": []
+    }
+  }
+]
